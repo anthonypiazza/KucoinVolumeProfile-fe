@@ -24,8 +24,10 @@ const Form = (props) => {
     return(
         <div>
             <form style={{display: 'flex', flexDirection: 'column'}}>
-                <label>Base Coin</label>
+                <label >Base Coin</label>
                 <input 
+                    style={{ borderRadius: '10px', padding: '10px', border: 'none'}}
+                    placeholder="i.e. BTC"
                     type="text"
                     onChange={handleChange}
                     name="base"
@@ -33,19 +35,24 @@ const Form = (props) => {
                 
                 <label>Paired Coin</label>
                 <input
+                    style={{ borderRadius: '10px', padding: '10px', border: 'none'}}
+                    placeholder="i.e. USDT"
                     type="text"
                     onChange={handleChange}
                     name="paired"
                 />
                 
                 <label>Time Period</label>
-                <input                    
-                    type="text"
+                <select
+                    style={{ borderRadius: '10px', padding: '10px', border: 'none'}}
                     onChange={handleChange}
                     name="period"
-                />
-
-                <button onClick={handleSubmit}>Calculate Buy/Sell Zones</button>
+                >
+                    <option style={{ borderRadius: '10px', padding: '10px', border: 'none'}} disabled>Select period...</option>
+                    <option style={{ borderRadius: '10px', padding: '10px', border: 'none'}} >1day</option>
+                    <option style={{ borderRadius: '10px', padding: '10px', border: 'none'}} >1week</option>
+                </select>
+                <button style={{ marginTop: '20px', borderRadius: '10px', padding: '10px', border: 'none'}} onClick={handleSubmit}>Calculate Buy/Sell Zones</button>
 
             </form>
         </div>
